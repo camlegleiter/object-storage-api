@@ -1,6 +1,7 @@
-/* eslint-disable import/prefer-default-export */
-import * as fs from 'fs-extra';
+const fs = require('fs-extra');
 
-import createFsManager from './fsManager';
+const createFsManager = require('./fsManager');
 
-export const fsManager = createFsManager({ fs });
+module.exports = {
+  fsManager: createFsManager({ fs }),
+};

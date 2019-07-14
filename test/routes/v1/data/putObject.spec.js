@@ -1,8 +1,8 @@
-import config from 'config';
-import { PassThrough, Readable } from 'stream';
-import errors from 'throw.js';
+const config = require('config');
+const { PassThrough, Readable } = require('stream');
+const errors = require('throw.js');
 
-import createPutObjectHandler from '../../../../src/routes/v1/data/putObject';
+const createPutObjectHandler = require('../../../../src/routes/v1/data/putObject');
 
 describe('createPutObjectHandler', () => {
   const objectContents = 'Hello, World!';

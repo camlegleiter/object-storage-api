@@ -1,12 +1,12 @@
-import crypto from 'crypto';
-import d from 'debug';
-import { join } from 'path';
-import { Transform } from 'stream';
-import { BadRequest, InternalServerError } from 'throw.js';
+const crypto = require('crypto');
+const d = require('debug');
+const { join } = require('path');
+const { Transform } = require('stream');
+const { BadRequest, InternalServerError } = require('throw.js');
 
 const debug = d('objectstorage:data:putobject');
 
-export default function createPutObjectHandler({ fsManager }) {
+module.exports = function createPutObjectHandler({ fsManager }) {
   return async (req, res, next) => {
     // console.log(req.originalUrl); // /v1/data/path/to/file.ext
     // console.log(req.baseUrl); // /v1/data
@@ -59,4 +59,4 @@ export default function createPutObjectHandler({ fsManager }) {
 
     req.pipe(passThrough).pipe(stream);
   };
-}
+};

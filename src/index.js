@@ -1,6 +1,6 @@
-import config from 'config';
+const config = require('config');
 
-import app from './app';
+const app = require('./app');
 
 const port = config.get('port');
 
